@@ -1,0 +1,35 @@
+version: '3.7'
+
+x-shared-volumes: &shared-volumes
+  - .:/app:cached
+  - ~/.ssh:/root/.ssh
+  - ~/.bash_history:/root/.bash_history
+
+x-shared-environment: &shared-environment
+  EDITOR: vim
+
+x-web-environment: &web-environment
+  <<: *shared-environment
+  MIX_HOME: /app/.mix
+  HEX_HOME: /app/.hex
+  MIX_ARCHIVES: /app/.hex
+
+services:
+  web:
+    build: .
+    working_dir: /app
+    command: bash -c 'make phoenix_start'
+    ports:
+      - 4000:4000
+    volumes: *shared-volumes
+    environment:
+     <<: *web-environment
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  db:
+    image: postgres:12.2
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
