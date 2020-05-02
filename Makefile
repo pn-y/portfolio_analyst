@@ -35,4 +35,16 @@ pmix:
 phoenix_start:
 	mix phx.server
 
-.PHONY: phoenix_start pmix mix app-console app-bash app
+format:
+	mix format
+
+credo:
+	mix credo
+
+lint-js:
+	yarn lint
+
+lint-js-fix:
+	yarn lint --fix
+
+.PHONY: phoenix_start pmix mix app-console app-bash app format credo lint-js-fix
