@@ -44,8 +44,8 @@ defmodule PortfolioAnalyst.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
       {:plug_cowboy, "~> 2.0"},
+      {:arc_ecto, "~> 0.11.3"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
