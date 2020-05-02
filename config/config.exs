@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :portfolio_analytic,
-  ecto_repos: [PortfolioAnalytic.Repo]
+config :portfolio_analyst,
+  ecto_repos: [PortfolioAnalyst.Repo]
 
 # Configures the endpoint
-config :portfolio_analytic, PortfolioAnalyticWeb.Endpoint,
+config :portfolio_analyst, PortfolioAnalystWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "2jjXnqalOxkToE+Pxk021yyRxDxAfW173Gfr8Ftbi4GHbnGnfVXNjzRtsAIMKaYc",
-  render_errors: [view: PortfolioAnalyticWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PortfolioAnalytic.PubSub,
+  render_errors: [view: PortfolioAnalystWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PortfolioAnalyst.PubSub,
   live_view: [signing_salt: "YESm9X26"]
 
 # Configures Elixir's Logger

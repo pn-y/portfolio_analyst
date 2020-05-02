@@ -1,5 +1,5 @@
-defmodule PortfolioAnalyticWeb.ErrorView do
-  use PortfolioAnalyticWeb, :view
+defmodule PortfolioAnalystWeb.ErrorView do
+  use PortfolioAnalystWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

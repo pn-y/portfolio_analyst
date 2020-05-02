@@ -5,18 +5,20 @@ use Mix.Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :portfolio_analytic, PortfolioAnalytic.Repo,
+config :portfolio_analyst, PortfolioAnalyst.Repo,
   username: "postgres",
   password: "postgres",
-  database: "portfolio_analytic_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "portfolio_analyst_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :portfolio_analytic, PortfolioAnalyticWeb.Endpoint,
+config :portfolio_analyst, PortfolioAnalystWeb.Endpoint,
   http: [port: 4002],
   server: false
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :arc, storage: Arc.Storage.Local

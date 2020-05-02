@@ -1,4 +1,4 @@
-defmodule PortfolioAnalytic.DataCase do
+defmodule PortfolioAnalyst.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule PortfolioAnalytic.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PortfolioAnalytic.DataCase, async: true`, although
+  by setting `use PortfolioAnalyst.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule PortfolioAnalytic.DataCase do
 
   using do
     quote do
-      alias PortfolioAnalytic.Repo
+      alias PortfolioAnalyst.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import PortfolioAnalytic.DataCase
+      import PortfolioAnalyst.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PortfolioAnalytic.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PortfolioAnalyst.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PortfolioAnalytic.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(PortfolioAnalyst.Repo, {:shared, self()})
     end
 
     :ok

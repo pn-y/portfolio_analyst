@@ -1,4 +1,4 @@
-defmodule PortfolioAnalyticWeb.Telemetry do
+defmodule PortfolioAnalystWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -29,11 +29,11 @@ defmodule PortfolioAnalyticWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("portfolio_analytic.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("portfolio_analytic.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("portfolio_analytic.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("portfolio_analytic.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("portfolio_analytic.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("portfolio_analyst.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("portfolio_analyst.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("portfolio_analyst.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("portfolio_analyst.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("portfolio_analyst.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -47,7 +47,7 @@ defmodule PortfolioAnalyticWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {PortfolioAnalyticWeb, :count_users, []}
+      # {PortfolioAnalystWeb, :count_users, []}
     ]
   end
 end

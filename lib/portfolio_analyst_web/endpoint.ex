@@ -1,16 +1,16 @@
-defmodule PortfolioAnalyticWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :portfolio_analytic
+defmodule PortfolioAnalystWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :portfolio_analyst
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_portfolio_analytic_key",
+    key: "_portfolio_analyst_key",
     signing_salt: "q8hIBcdA"
   ]
 
-  socket("/socket", PortfolioAnalyticWeb.UserSocket,
+  socket("/socket", PortfolioAnalystWeb.UserSocket,
     websocket: true,
     longpoll: false
   )
@@ -23,7 +23,7 @@ defmodule PortfolioAnalyticWeb.Endpoint do
   # when deploying your static files in production.
   plug(Plug.Static,
     at: "/",
-    from: :portfolio_analytic,
+    from: :portfolio_analyst,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
   )
@@ -34,7 +34,7 @@ defmodule PortfolioAnalyticWeb.Endpoint do
     socket("/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket)
     plug(Phoenix.LiveReloader)
     plug(Phoenix.CodeReloader)
-    plug(Phoenix.Ecto.CheckRepoStatus, otp_app: :portfolio_analytic)
+    plug(Phoenix.Ecto.CheckRepoStatus, otp_app: :portfolio_analyst)
   end
 
   plug(Phoenix.LiveDashboard.RequestLogger,
@@ -54,5 +54,5 @@ defmodule PortfolioAnalyticWeb.Endpoint do
   plug(Plug.MethodOverride)
   plug(Plug.Head)
   plug(Plug.Session, @session_options)
-  plug(PortfolioAnalyticWeb.Router)
+  plug(PortfolioAnalystWeb.Router)
 end

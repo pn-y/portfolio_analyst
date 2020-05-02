@@ -1,9 +1,9 @@
-defmodule PortfolioAnalytic.MixProject do
+defmodule PortfolioAnalyst.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :portfolio_analytic,
+      app: :portfolio_analyst,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule PortfolioAnalytic.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PortfolioAnalytic.Application, []},
+      mod: {PortfolioAnalyst.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

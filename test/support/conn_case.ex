@@ -1,4 +1,4 @@
-defmodule PortfolioAnalyticWeb.ConnCase do
+defmodule PortfolioAnalystWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule PortfolioAnalyticWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PortfolioAnalyticWeb.ConnCase, async: true`, although
+  by setting `use PortfolioAnalystWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule PortfolioAnalyticWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import PortfolioAnalyticWeb.ConnCase
+      import PortfolioAnalystWeb.ConnCase
 
-      alias PortfolioAnalyticWeb.Router.Helpers, as: Routes
+      alias PortfolioAnalystWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint PortfolioAnalyticWeb.Endpoint
+      @endpoint PortfolioAnalystWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PortfolioAnalytic.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PortfolioAnalyst.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PortfolioAnalytic.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(PortfolioAnalyst.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

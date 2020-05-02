@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :portfolio_analytic, PortfolioAnalytic.Repo,
+config :portfolio_analyst, PortfolioAnalyst.Repo,
   username: "postgres",
   password: "postgres",
-  database: "portfolio_analytic_dev",
+  database: "portfolio_analyst_dev",
   hostname: "db",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :portfolio_analytic, PortfolioAnalytic.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :portfolio_analytic, PortfolioAnalyticWeb.Endpoint,
+config :portfolio_analyst, PortfolioAnalystWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -55,13 +55,13 @@ config :portfolio_analytic, PortfolioAnalyticWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :portfolio_analytic, PortfolioAnalyticWeb.Endpoint,
+config :portfolio_analyst, PortfolioAnalystWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/portfolio_analytic_web/(live|views)/.*(ex)$",
-      ~r"lib/portfolio_analytic_web/templates/.*(eex)$"
+      ~r"lib/portfolio_analyst_web/(live|views)/.*(ex)$",
+      ~r"lib/portfolio_analyst_web/templates/.*(eex)$"
     ]
   ]
 
@@ -74,3 +74,5 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :arc, storage: Arc.Storage.Local

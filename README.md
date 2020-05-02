@@ -1,4 +1,4 @@
-# PortfolioAnalytic
+# PortfolioAnalyst
 
 To start your Phoenix server:
 

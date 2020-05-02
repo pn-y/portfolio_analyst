@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(PortfolioAnalytic.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(PortfolioAnalyst.Repo, :manual)
