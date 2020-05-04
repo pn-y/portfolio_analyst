@@ -21,4 +21,4 @@ config :portfolio_analyst, PortfolioAnalystWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-config :arc, storage: Arc.Storage.Local
+config :arc, storage: Arc.Storage.Local, storage_dir: Path.expand("./uploads")
