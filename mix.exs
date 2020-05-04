@@ -46,7 +46,9 @@ defmodule PortfolioAnalyst.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:arc_ecto, "~> 0.11.3"},
-      {:credo, "~> 1.4", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:ex_machina, "~> 2.4", only: [:dev, :test]},
+      {:csv, "~> 2.3"},
     ]
   end
 

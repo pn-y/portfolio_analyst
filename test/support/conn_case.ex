@@ -23,6 +23,7 @@ defmodule PortfolioAnalystWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import PortfolioAnalystWeb.ConnCase
+      import PortfolioAnalyst.Factory
 
       alias PortfolioAnalystWeb.Router.Helpers, as: Routes
 
